@@ -13,9 +13,11 @@ namespace Core
 
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.RegisterEntryPoint<DebugTablet>();
             builder.RegisterInstance(_fpsText).Keyed(DebugTablet.TextType.FPS);
             builder.RegisterInstance(_logText).Keyed(DebugTablet.TextType.Log);
+            builder.Register<FPSCalculator>(Lifetime.Singleton);
+
+            builder.RegisterEntryPoint<DebugTablet>();
         }
     }
 }

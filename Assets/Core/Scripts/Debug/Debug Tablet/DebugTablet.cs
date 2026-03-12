@@ -14,45 +14,56 @@ namespace Core
             Log
         }
 
+        public const int MaxDebugMessages = 10;
+
         private readonly TMP_Text _fpsTextComponent;
         private readonly TMP_Text _logTextComponent;
+        private readonly FPSCalculator _fpsCalculator;
 
         private int _maxDebugMessages = 10;
-        private Queue<string> _debugMessages;
+        private Queue<string> _logMessages;
 
         public DebugTablet(
             [Key(TextType.FPS)] TMP_Text fpsTextComponent,
-            [Key(TextType.Log)] TMP_Text logTextComponent)
+            [Key(TextType.Log)] TMP_Text logTextComponent,
+            FPSCalculator fpsCalculator)
         {
             _fpsTextComponent = fpsTextComponent;
             _logTextComponent = logTextComponent;
+            _fpsCalculator = fpsCalculator;
 
-            _debugMessages = new Queue<string>();
-            _logTextComponent.text = "";
+            _logMessages = new Queue<string>();
+
+            _fpsCalculator.OnFPSCalculated += OnFPSCalculated;
+
+            ShowLogMessages(new Queue<string>()); // Clear
         }
 
         public void Tick()
         {
-            UpdateFPS();
+            _fpsCalculator.Tick();
         }
 
         public void AddDebugMessage(string debugMessage)
         {
-            if (_debugMessages.Count == _maxDebugMessages)
-                _debugMessages.Dequeue();
+            if (_logMessages.Count == _maxDebugMessages)
+                _logMessages.Dequeue();
 
-            _debugMessages.Enqueue(debugMessage);
+            _logMessages.Enqueue(debugMessage);
 
-            _logTextComponent.text = "";
-            foreach (var message in _debugMessages)
-                _logTextComponent.text += $"{message}\n";
+            ShowLogMessages(_logMessages);
         }
 
-        private void UpdateFPS()
+        private void ShowLogMessages(Queue<string> logMessages)
         {
-            float fps = Mathf.Round(1.0f / Time.deltaTime);
-            _fpsTextComponent.text = fps.ToString();
-            AddDebugMessage(fps.ToString());
+            _logTextComponent.text = "";
+            foreach (var message in logMessages)
+                _logTextComponent.text += $"{message}\n";
+        }
+        private void OnFPSCalculated(float fps)
+        {
+            _fpsTextComponent.text = $"FPS: {Mathf.Round(fps)}";
+            AddDebugMessage(Mathf.Round(fps).ToString());
         }
     }
 }

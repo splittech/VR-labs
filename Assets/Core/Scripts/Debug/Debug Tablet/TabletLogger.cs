@@ -11,7 +11,7 @@
 
         public override void Log(LogLevel logLevel, string message)
         {
-            string fullMessage = $"{GetLogLevelString(LogLevel.Info)}{message}";
+            string fullMessage = $"{GetLogLevelString(LogLevel.Info)} {message}";
             _debugTablet.AddDebugMessage(fullMessage);
         }
     }
