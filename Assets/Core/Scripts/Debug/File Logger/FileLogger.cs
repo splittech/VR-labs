@@ -9,9 +9,9 @@ namespace Core
     {
         public readonly string FullPath;
 
-        private readonly FileLoggerSettings _settings;
+        private readonly FileLoggerConfig _settings;
 
-        public FileLogger(FileLoggerSettings settings)
+        public FileLogger(FileLoggerConfig settings)
         {
             _settings = settings;
 

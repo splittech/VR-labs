@@ -14,29 +14,29 @@ namespace Core
             Log
         }
 
-        public const int MaxDebugMessages = 10;
-
         private readonly TMP_Text _fpsTextComponent;
         private readonly TMP_Text _logTextComponent;
         private readonly FPSCalculator _fpsCalculator;
+        private readonly DebugTabletConfig _debugTabletConfig;
 
-        private int _maxDebugMessages = 10;
         private Queue<string> _logMessages;
 
         public DebugTablet(
             [Key(TextType.FPS)] TMP_Text fpsTextComponent,
             [Key(TextType.Log)] TMP_Text logTextComponent,
+            DebugTabletConfig debugTabletConfig,
             FPSCalculator fpsCalculator)
         {
             _fpsTextComponent = fpsTextComponent;
             _logTextComponent = logTextComponent;
             _fpsCalculator = fpsCalculator;
+            _debugTabletConfig = debugTabletConfig;
 
             _logMessages = new Queue<string>();
 
             _fpsCalculator.OnFPSCalculated += OnFPSCalculated;
 
-            ShowLogMessages(new Queue<string>()); // Clear
+            ShowLogMessages(new Queue<string>());
         }
 
         public void Tick()
@@ -46,7 +46,7 @@ namespace Core
 
         public void AddDebugMessage(string debugMessage)
         {
-            if (_logMessages.Count == _maxDebugMessages)
+            if (_logMessages.Count == _debugTabletConfig.MaxLogMessages)
                 _logMessages.Dequeue();
 
             _logMessages.Enqueue(debugMessage);

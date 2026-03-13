@@ -5,34 +5,34 @@ namespace Core
 {
     public class FPSCalculator
     {
-        private const float CalculateFPSInterval = 1f; // In seconds
+        private readonly DebugTabletConfig _debugTabletConfig;
 
-        private int _totalFrames = 0;
-        private float _totalTime = 0f;
+        private int _framesInInterval = 0;
+        private float _intervalTime = 0f;
 
         public event Action<float> OnFPSCalculated;
 
-        public FPSCalculator()
+        public FPSCalculator(DebugTabletConfig debugTabletConfig)
         {
-
+            _debugTabletConfig = debugTabletConfig;
         }
 
         public void Tick()
         {
-            _totalFrames++;
-            _totalTime += Time.deltaTime;
+            _framesInInterval++;
+            _intervalTime += Time.deltaTime;
 
-            if (_totalTime > CalculateFPSInterval)
+            if (_intervalTime > _debugTabletConfig.CalculateFPSInterval)
+            {
                 CalculateFPS();
+                _framesInInterval = 0;
+                _intervalTime = 0f;
+            }
         }
 
         private void CalculateFPS()
         {
-            float fps = _totalFrames / _totalTime;
-
-            _totalFrames = 0;
-            _totalTime = 0f;
-
+            float fps = _framesInInterval / _intervalTime;
             OnFPSCalculated.Invoke(fps);
         }
     }
