@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Core
+namespace Core.Debug
 {
-    internal abstract class BaseLogger
+    public abstract class BaseLogger
     {
         public enum LogLevel
         {

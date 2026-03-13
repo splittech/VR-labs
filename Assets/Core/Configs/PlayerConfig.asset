@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd519e450ee2b444d890f37b16620537, type: 3}
+  m_Name: PlayerConfig
+  m_EditorClassIdentifier: Core::Core.PlayerConfig
+  _walkSpeed: 3
+  _sprintSpeed: 6
+  _sprintInput:
+    m_InputSourceMode: 2
+    m_InputActionPerformed:
+      m_Name: Sprint
+      m_Type: 1
+      m_ExpectedControlType: 
+      m_Id: e5f3394c-1ed4-489f-96d8-574f1012aa23
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_InputActionValue:
+      m_Name: Sprint Value
+      m_Type: 0
+      m_ExpectedControlType: Axis
+      m_Id: c5b2c399-5a0a-47c7-86d7-e49939e6509f
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_InputActionReferencePerformed: {fileID: -6092831719509137847, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_InputActionReferenceValue: {fileID: -6092831719509137847, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_ObjectReferenceObject: {fileID: 0}
+    m_ManualPerformed: 0
+    m_ManualValue: 0
+    m_ManualQueuePerformed: 0
+    m_ManualQueueWasPerformedThisFrame: 0
+    m_ManualQueueWasCompletedThisFrame: 0
+    m_ManualQueueValue: 0
+    m_ManualQueueTargetFrame: 0

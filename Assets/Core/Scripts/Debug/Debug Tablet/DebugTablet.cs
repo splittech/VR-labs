@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TMPro;
-using UnityEngine;
 using VContainer;
-using VContainer.Unity;
 
-namespace Core
+namespace Core.Debug
 {
-    internal class DebugTablet : ITickable
+    public class DebugTablet
     {
         public enum TextType
         {
@@ -39,11 +38,6 @@ namespace Core
             ShowLogMessages(new Queue<string>());
         }
 
-        public void Tick()
-        {
-            _fpsCalculator.Tick();
-        }
-
         public void AddDebugMessage(string debugMessage)
         {
             if (_logMessages.Count == _debugTabletConfig.MaxLogMessages)
@@ -62,8 +56,7 @@ namespace Core
         }
         private void OnFPSCalculated(float fps)
         {
-            _fpsTextComponent.text = $"FPS: {Mathf.Round(fps)}";
-            AddDebugMessage(Mathf.Round(fps).ToString());
+            _fpsTextComponent.text = $"FPS: {Math.Round(fps, 2)}";
         }
     }
 }

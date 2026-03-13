@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Core
+namespace Core.Debug
 {
-    [CreateAssetMenu(fileName = "DebugTabletConfig", menuName = "Configs/DebugTabletConfig", order = 1)]
+    [CreateAssetMenu(fileName = "DebugTabletConfig", menuName = "Configs/DebugTabletConfig", order = 2)]
     public class DebugTabletConfig : ScriptableObject
     {
         [SerializeField] private int _maxLogMessages;

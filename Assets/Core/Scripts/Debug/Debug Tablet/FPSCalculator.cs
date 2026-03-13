@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Core
+namespace Core.Debug
 {
     public class FPSCalculator
     {
@@ -17,7 +17,7 @@ namespace Core
             _debugTabletConfig = debugTabletConfig;
         }
 
-        public void Tick()
+        public void Update()
         {
             _framesInInterval++;
             _intervalTime += Time.deltaTime;
@@ -25,8 +25,7 @@ namespace Core
             if (_intervalTime > _debugTabletConfig.CalculateFPSInterval)
             {
                 CalculateFPS();
-                _framesInInterval = 0;
-                _intervalTime = 0f;
+                ResetCounters();
             }
         }
 
@@ -34,6 +33,12 @@ namespace Core
         {
             float fps = _framesInInterval / _intervalTime;
             OnFPSCalculated.Invoke(fps);
+        }
+
+        private void ResetCounters()
+        {
+            _framesInInterval = 0;
+            _intervalTime = 0f;
         }
     }
 }

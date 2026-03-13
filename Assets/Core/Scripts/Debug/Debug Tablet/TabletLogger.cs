@@ -1,6 +1,6 @@
-﻿namespace Core
+﻿namespace Core.Debug
 {
-    internal class TabletLogger : BaseLogger
+    public class TabletLogger : BaseLogger
     {
         private readonly DebugTablet _debugTablet;
 

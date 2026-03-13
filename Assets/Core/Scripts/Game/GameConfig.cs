@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace Core
+namespace Core.Game
 {
-    internal class ProjectSettings : ScriptableObject
+    internal class GameConfig : ScriptableObject
     {
         public enum LoggerOption
         {
