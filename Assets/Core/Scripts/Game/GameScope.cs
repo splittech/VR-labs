@@ -8,8 +8,6 @@ namespace Core.Game
 {
     public class GameScope : LifetimeScope
     {
-        [Header("Configs")]
-        [SerializeField] private DebugTabletConfig _debugTabletConfig;
 
         [Header("Components")]
         [SerializeField] private TMP_Text _debugTabletFPStext;

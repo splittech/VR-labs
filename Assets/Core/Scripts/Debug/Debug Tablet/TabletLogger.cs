@@ -2,7 +2,6 @@
 {
     public class TabletLogger : BaseLogger
     {
-        private readonly DebugTablet _debugTablet;
 
         public TabletLogger(DebugTablet debugTablet)
         {

@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Core.Debug.BaseLogger" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Core.Debug.BaseLogger.LogLevel" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Core\Scripts\Debug\BaseLogger.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Core\Scripts\Debug\BaseLogger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Debug.DebugTablet">
+    <Position X="24.75" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="AddDebugMessage" Hidden="true" />
+      <Method Name="DebugTablet" Hidden="true" />
+      <Method Name="OnFPSCalculated" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Core.Debug.DebugTablet.TextType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Core\Scripts\Debug\Debug Tablet\DebugTablet.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CAAQAAAAAAAAAAAAAAhAIAAACAACAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Core\Scripts\Debug\Debug Tablet\DebugTablet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_debugTabletConfig" />
+      <Field Name="_fpsCalculator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Core.Debug.DebugTabletConfig">
+    <Position X="21.5" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAEAAAAAAAAgAIAAAAA=</HashCode>
+      <FileName>Assets\Core\Scripts\Debug\Debug Tablet\DebugTabletConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Debug.FPSCalculator">
+    <Position X="24.75" Y="2.75" Width="1.5" />
+    <Members>
+      <Method Name="CalculateFPS" Hidden="true" />
+      <Method Name="FPSCalculator" Hidden="true" />
+      <Method Name="ResetCounters" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAEggAAAACAAAQAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Assets\Core\Scripts\Debug\Debug Tablet\FPSCalculator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_debugTabletConfig" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Core.Debug.TabletLogger">
+    <Position X="15.25" Y="1.75" Width="1.5" />
+    <Members>
+      <Method Name="TabletLogger" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Core\Scripts\Debug\Debug Tablet\TabletLogger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Debug.FileLogger" Collapsed="true">
+    <Position X="17.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAgAgAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Core\Scripts\Debug\File Logger\FileLogger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Debug.FileLoggerConfig">
+    <Position X="8.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Core\Scripts\Debug\File Logger\FileLoggerConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Game.GameConfig">
+    <Position X="8.25" Y="5.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Core.Game.GameConfig.LoggerOption" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Core\Scripts\Game\GameConfig.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Core\Scripts\Game\GameConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Game.GameScope">
+    <Position X="6.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAACAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Core\Scripts\Game\GameScope.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Game.GameStarter" BaseTypeListCollapsed="true">
+    <Position X="28" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="GameStarter" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAABAAAAAAAAAAAAAAAAAAAAAQQA=</HashCode>
+      <FileName>Assets\Core\Scripts\Game\GameStarter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_debugTablet" />
+      <Field Name="_fpsCalculator" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Core.NewMonoBehaviourScript">
+    <Position X="30.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAACAAgAAAAAAAAAAAAAAAAQgAAAAAQAAAAAA=</HashCode>
+      <FileName>Assets\Core\Scripts\NewMonoBehaviourScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Player.PlayerConfig">
+    <Position X="19.5" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAABAAAAAAAAAAAAAgAQAAEAAAAAAABAAA=</HashCode>
+      <FileName>Assets\Core\Scripts\Player\PlayerConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Player.PlayerScope">
+    <Position X="6.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAABAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Core\Scripts\Player\PlayerScope.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Player.PlayerSprint">
+    <Position X="15.25" Y="5" Width="1.5" />
+    <Members>
+      <Method Name="PlayerSprint" Hidden="true" />
+      <Method Name="StartSprinting" Hidden="true" />
+      <Method Name="StopSprinting" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAIAAAAAAAAAAIAAIAAAIgAAEAAAAAAAA=</HashCode>
+      <FileName>Assets\Core\Scripts\Player\PlayerSprint.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_playerConfig" />
+      <Field Name="_tabletLogger" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Core.Player.PlayerStarter" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="4.5" Width="1.5" />
+    <Members>
+      <Method Name="PlayerStarter" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Assets\Core\Scripts\Player\PlayerStarter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_playerSprint" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
