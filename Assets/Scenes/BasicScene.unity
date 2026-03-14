@@ -1160,7 +1160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Core::Core.PlayerScope
   parentReference:
-    TypeName: Core.GameScope
+    TypeName: Core.Game.GameScope
   autoRun: 1
   autoInjectGameObjects: []
   _playerConfig: {fileID: 11400000, guid: 85e4ba2b28f11084abfb9b7b221be043, type: 2}
