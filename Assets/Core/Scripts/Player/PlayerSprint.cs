@@ -1,4 +1,5 @@
 using Core.Debug;
+using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 namespace Core.Player
@@ -7,18 +8,19 @@ namespace Core.Player
     {
         private readonly PlayerConfig _playerConfig;
         private readonly DynamicMoveProvider _dynamicMoveProvider;
-        private readonly TabletLogger _tabletLogger;
+        private readonly BaseLogger _logger;
 
         private bool _isSprinting = false;
 
         public PlayerSprint(
             PlayerConfig playerConfig,
             DynamicMoveProvider dynamicMoveProvider,
-            TabletLogger tabletLogger)
+            LoggerFactory loggerFactory)
         {
             _playerConfig = playerConfig;
             _dynamicMoveProvider = dynamicMoveProvider;
-            _tabletLogger = tabletLogger;
+
+            _logger = loggerFactory.CreateLogger(_playerConfig.LoggerOption);
 
             _dynamicMoveProvider.moveSpeed = _playerConfig.WalkSpeed;
         }
@@ -46,13 +48,13 @@ namespace Core.Player
         private void StartSprinting()
         {
             _dynamicMoveProvider.moveSpeed = _playerConfig.SprintSpeed;
-            _tabletLogger.Log(BaseLogger.LogLevel.Info, $"Started sprinting with speed: {_playerConfig.SprintSpeed}");
+            _logger.Log(BaseLogger.LogLevel.Info, $"Started sprinting with speed: {_playerConfig.SprintSpeed}.");
         }
 
         private void StopSprinting()
         {
             _dynamicMoveProvider.moveSpeed = _playerConfig.WalkSpeed;
-            _tabletLogger.Log(BaseLogger.LogLevel.Info, $"Started walking with speed: {_playerConfig.WalkSpeed}");
+            _logger.Log(BaseLogger.LogLevel.Info, $"Started walking with speed: {_playerConfig.WalkSpeed}.");
         }
     }
 }

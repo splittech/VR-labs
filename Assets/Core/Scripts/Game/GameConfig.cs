@@ -1,18 +1,19 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Core.Game
 {
-    internal class GameConfig : ScriptableObject
+    public class GameConfig : ScriptableObject
     {
-        public enum LoggerOption
+        [Flags]
+        public enum LoggerOptionType
         {
-            None,
-            All,
-            Tablet,
-            File
+            Tablet = 1,
+            File = 2
         }
 
-        [SerializeField]
-        private LoggerOption _loggerOption;
+        [SerializeField] private LoggerOptionType _loggerOption;
+
+        public LoggerOptionType LoggerOption { get => _loggerOption; }
     }
 }

@@ -44,3 +44,4 @@ MonoBehaviour:
     m_ManualQueueWasCompletedThisFrame: 0
     m_ManualQueueValue: 0
     m_ManualQueueTargetFrame: 0
+  _loggerOption: -1

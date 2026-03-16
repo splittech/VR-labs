@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Game;
+using System;
 using System.IO;
 using System.Text;
 using UnityEngine;
@@ -7,29 +8,46 @@ namespace Core.Debug
 {
     internal class FileLogger : BaseLogger
     {
-        public readonly string FullPath;
+        private readonly FileLoggerConfig _fileLoggerConfig;
+        private readonly BaseLogger _logger;
+        private readonly string _fullFilePath;
 
-        private readonly FileLoggerConfig _settings;
-
-        public FileLogger(FileLoggerConfig settings)
+        public FileLogger(FileLoggerConfig fileLoggerConfig, LoggerFactory loggerFactory)
         {
-            _settings = settings;
+            _fileLoggerConfig = fileLoggerConfig;
 
-            FullPath = Path.Combine(Application.persistentDataPath, _settings.FileName);
+            // Unset the 'FileLogger' option for FileLogger
+            GameConfig.LoggerOptionType loggerOptionWithoutFileLogger =
+                _fileLoggerConfig.LoggerOption & ~GameConfig.LoggerOptionType.File;
+
+            _logger = loggerFactory.CreateLogger(loggerOptionWithoutFileLogger);
+
+            _fullFilePath = Path.Combine(Application.persistentDataPath, _fileLoggerConfig.FileName + ".txt");
 
             ResetFile();
         }
 
         private void ResetFile()
         {
-            File.WriteAllText(FullPath, "");
+            try
+            {
+                File.WriteAllText(_fullFilePath, "");
+            }
+            catch (Exception e)
+            {
+                _logger.Log(LogLevel.Error, $"Failed to create log file: {e.Message}");
+                return;
+            }
+
+            _logger.Log(LogLevel.Info, $"File recreated at path: {_fullFilePath}.");
+            Log(LogLevel.Info, $"File recreated at path: {_fullFilePath}.");
         }
 
         public override void Log(LogLevel logLevel, string message)
         {
             string fullMessage = $"{GetLogLevelString(logLevel)} {DateTime.Now}: {message}";
 
-            using StreamWriter writer = new(FullPath, true, Encoding.UTF8);
+            using StreamWriter writer = new(_fullFilePath, true, Encoding.UTF8);
                 writer.WriteLine(fullMessage);
         }
     }

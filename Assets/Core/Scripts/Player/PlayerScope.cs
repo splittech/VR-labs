@@ -16,7 +16,6 @@ namespace Core.Player
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterInstance(_playerConfig);
-
             builder.RegisterInstance(_dynamicMoveProvider);
 
             builder.Register<PlayerSprint>(Lifetime.Singleton);

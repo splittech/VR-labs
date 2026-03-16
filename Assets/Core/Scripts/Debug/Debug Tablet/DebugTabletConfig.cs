@@ -5,6 +5,7 @@ namespace Core.Debug
     [CreateAssetMenu(fileName = "DebugTabletConfig", menuName = "Configs/DebugTabletConfig", order = 2)]
     public class DebugTabletConfig : ScriptableObject
     {
+        [Header("Parameters")]
         [SerializeField] private int _maxLogMessages;
         [SerializeField] private float _calculateFPSInterval;
 

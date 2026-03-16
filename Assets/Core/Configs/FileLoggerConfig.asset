@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: FileLoggerConfig
   m_EditorClassIdentifier: Core::Core.FileLoggerConfig
   _fileName: Logs
+  _loggerOption: -1

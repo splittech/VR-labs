@@ -10,6 +10,7 @@ namespace Core.Game
     {
         [Header("Configs")]
         [SerializeField] private DebugTabletConfig _debugTabletConfig;
+        [SerializeField] private FileLoggerConfig _fileLoggerConfig;
 
         [Header("Components")]
         [SerializeField] private TMP_Text _debugTabletFPStext;
@@ -18,13 +19,16 @@ namespace Core.Game
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterInstance(_debugTabletConfig);
-
+            builder.RegisterInstance(_fileLoggerConfig);
             builder.RegisterInstance(_debugTabletFPStext).Keyed(DebugTablet.TextType.FPS);
             builder.RegisterInstance(_debugTabletLogText).Keyed(DebugTablet.TextType.Log);
 
             builder.Register<FPSCalculator>(Lifetime.Singleton);
             builder.Register<DebugTablet>(Lifetime.Singleton);
             builder.Register<TabletLogger>(Lifetime.Singleton);
+            builder.Register<FileLogger>(Lifetime.Singleton);
+
+            builder.Register<LoggerFactory>(Lifetime.Singleton);
 
             builder.RegisterEntryPoint<GameStarter>();
         }
