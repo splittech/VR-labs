@@ -54433,6 +54433,37 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &1072923717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1072923718}
+  m_Layer: 0
+  m_Name: -----SOPES-----
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1072923718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072923717}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.33, y: 0.65, z: 1.584816}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1076926383
 GameObject:
   m_ObjectHideFlags: 0
@@ -72113,7 +72144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1573066479}
   m_Layer: 0
-  m_Name: -----GAME LOGIC-----
+  m_Name: -----INTERACTIVE OBJECTS-----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105220,9 +105251,10 @@ SceneRoots:
   - {fileID: 1247276709}
   - {fileID: 655834161}
   - {fileID: 1573066479}
-  - {fileID: 897837815}
   - {fileID: 1126632637}
   - {fileID: 1581422588}
   - {fileID: 215903935}
   - {fileID: 3711908875405965383}
   - {fileID: 208312462}
+  - {fileID: 1072923718}
+  - {fileID: 897837815}

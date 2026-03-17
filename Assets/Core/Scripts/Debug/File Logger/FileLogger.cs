@@ -16,7 +16,7 @@ namespace Core.Debug
         {
             _fileLoggerConfig = fileLoggerConfig;
 
-            // Unset the 'FileLogger' option for FileLogger
+            // Unset the 'FileLogger' loger option for FileLogger (exclude self reference).
             GameConfig.LoggerOptionType loggerOptionWithoutFileLogger =
                 _fileLoggerConfig.LoggerOption & ~GameConfig.LoggerOptionType.File;
 
@@ -24,10 +24,10 @@ namespace Core.Debug
 
             _fullFilePath = Path.Combine(Application.persistentDataPath, _fileLoggerConfig.FileName + ".txt");
 
-            ResetFile();
+            CreateFile();
         }
 
-        private void ResetFile()
+        private void CreateFile()
         {
             try
             {
@@ -39,8 +39,8 @@ namespace Core.Debug
                 return;
             }
 
-            _logger.Log(LogLevel.Info, $"File recreated at path: {_fullFilePath}.");
-            Log(LogLevel.Info, $"File recreated at path: {_fullFilePath}.");
+            _logger.Log(LogLevel.Info, $"Log file created at path: {_fullFilePath}.");
+            Log(LogLevel.Info, $"Log file created at path: {_fullFilePath}.");
         }
 
         public override void Log(LogLevel logLevel, string message)

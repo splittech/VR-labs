@@ -1,5 +1,4 @@
 using Core.Debug;
-using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 namespace Core.Player
